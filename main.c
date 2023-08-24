@@ -1,4 +1,6 @@
 #include "monty.h"
+int val;
+FILE *fd;
 /**
  * main - entry function.
  * @argc: number of params.
@@ -7,9 +9,6 @@
  */
 int main(int argc, char *argv[])
 {
-	int val;
-	FILE *fd;
-
 	if (argc != 2)
 		errorNoFile(EXIT_FAILURE);
 	_getfile(argv[1]);
