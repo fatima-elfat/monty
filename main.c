@@ -102,7 +102,7 @@ void (*isopcode(char *opc))(stack_t **, unsigned int)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
-		{"div", div},
+		{"div", divv},
 		{"mul", mul},
 		{"mod", mod},
 		{"pchar", pchar},
