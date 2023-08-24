@@ -38,7 +38,7 @@ void _getfile(char *filename)
 			continue;
 		tmp = strdup(buff);
 		tok = strtok(tmp, " \t\n\r");
-		if (!tok || tok[0] == '#' || !strcmp(tok, "nop"))
+		if (!tok || tok[0] == '#')
 			continue;
 		strcpy(opcode, tok);
 		func = isopcode(opcode);
