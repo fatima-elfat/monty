@@ -37,7 +37,7 @@ void _getfile(char *filename)
 		if (buff[0] == '#')
 			continue;
 		tmp = strdup(buff);
-		tok = strtok(tmp, " \t\n");
+		tok = strtok(tmp, " \r\n\t");
 		if (!tok || tok[0] == '#' || !strcmp(tok, "nop"))
 			continue;
 		strcpy(opcode, tok);
@@ -64,7 +64,7 @@ int intVal(unsigned int count, char *opcode, stack_t *stack, char *tok)
 	int i = 0;
 	char a[124];
 
-	tok = strtok(NULL, " \n\r\t");
+	tok = strtok(NULL, " \r\n\t");
 	if (strcmp(opcode, "push") == 0)
 	{
 		if (!tok)
@@ -96,6 +96,8 @@ void (*isopcode(char *opc))(stack_t **, unsigned int)
 	instruction_t l_opc[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		{"pop", pop},
 		{NULL, NULL}
 	};
 	while (l_opc[i].f != NULL)

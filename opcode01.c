@@ -57,3 +57,27 @@ void pint(stack_t **stack, unsigned int count)
 		errorPint(EXIT_FAILURE, count);
 	fprintf(stdout, "%d\n", (*stack)->n);
 }
+#include "monty.h"
+
+/**
+ * pop - ...
+ * @stack: ...
+ * @count: ...
+ */
+void pop(stack_t **stack, unsigned int count)
+{
+	stack_t *node = NULL;
+
+	if (!*stack)
+		errorPop(EXIT_FAILURE, count);
+	node = *stack;
+	if (!(*stack)->next)
+		*stack = NULL;
+	else
+	{
+		(*stack)->prev = NULL;
+		*stack = (*stack)->next;
+	}
+	val= node->n;
+	free(node);
+}
