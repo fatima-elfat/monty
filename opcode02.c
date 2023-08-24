@@ -71,9 +71,5 @@ void mul(stack_t **stack, unsigned int count)
 		errorMul(EXIT_FAILURE, count);
 	node = *stack;
 	node->next->n = node->next->n * node->n;
-<<<<<<< HEAD
 	pop(stack, count);
 }
-=======
-}
->>>>>>> dbcd6e13466de2cdbb4d5863473be481d478c9b4
