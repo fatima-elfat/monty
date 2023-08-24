@@ -30,3 +30,25 @@ void pchar(stack_t **stack, unsigned int count)
 		errorPcharr(EXIT_FAILURE, count);
 	fprintf(stdout, "%c\n", (*stack)->n);
 }
+/**
+ * pstr - ...
+ * @stack: ...
+ * @count: ...
+ */
+void pstr(stack_t **stack, unsigned int count)
+{
+	stack_t *node = NULL;
+
+	(void) count;
+	node = *stack;
+	while (node && node->next)
+	{
+		if (!node->n)
+			break;
+		if (node->n < 0 || node->n > 127)
+			break;
+		fprintf(stdout, "%c", node->n);
+		node = node->next;
+	}
+	fprintf(stdout, "\n");
+}
