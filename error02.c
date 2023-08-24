@@ -34,3 +34,14 @@ void errorSwap(int r, int i)
 	fclose(fd);
 	exit(r);
 }
+/**
+ * errorAdd - handles error when can't swap.
+ * @r: exit value.
+ * @i: ...
+*/
+void errorAdd(int r, int i)
+{
+	fprintf(stderr, "L%d: can't add, stack too short\n", i);
+	fclose(fd);
+	exit(r);
+}
