@@ -19,7 +19,7 @@ void push(stack_t **stack, unsigned int count)
 	node->prev = NULL;
 	if (*stack)
 	{
-		node->prev = (*stack)->prev;
+		/*node->prev = (*stack)->prev;*/
 		(*stack)->prev = node;
 	}
 	*stack = node;
