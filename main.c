@@ -37,7 +37,7 @@ void _getfile(char *filename)
 		if (buff[0] == '#')
 			continue;
 		tmp = strdup(buff);
-		tok = strtok(tmp, " \t\n\r");
+		tok = strtok(tmp, " \t\n");
 		if (!tok || tok[0] == '#' || !strcmp(tok, "nop"))
 			continue;
 		strcpy(opcode, tok);
