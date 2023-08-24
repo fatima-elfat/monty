@@ -4,9 +4,9 @@
   * @stack: ...
   * @count: ...
   */
- void add(stack_t **stack, unsigned int count)
+void add(stack_t **stack, unsigned int count)
 {
-    stack_t *node = NULL;
+	stack_t *node = NULL;
 
 	if (!*stack || !(*stack)->next)
 		errorAdd(EXIT_FAILURE, count);
