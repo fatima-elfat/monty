@@ -85,7 +85,7 @@ void swap(stack_t **stack, unsigned int count);
 void add(stack_t **stack, unsigned int count);
 void nop(stack_t **stack, unsigned int count);
 void sub(stack_t **stack, unsigned int count);
-void div(stack_t **stack, unsigned int count);
+void divv(stack_t **stack, unsigned int count);
 void mul(stack_t **stack, unsigned int count);
 
 /* opcode03.c*/
