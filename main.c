@@ -47,7 +47,9 @@ void _getfile(char *filename)
 		intVal(count, opcode, stack, tok);
 		func(&stack, count);
 	}
-	fclose(fd), free(tmp), free(buff), frees_t(stack);
+	fclose(fd);
+       	free(tmp), free(buff);
+	frees_t(stack);
 }
 /**
  * intVal - check if int value.
