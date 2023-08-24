@@ -31,16 +31,16 @@ void push(stack_t **stack, unsigned int count)
  */
 void pall(stack_t **stack, unsigned int count)
 {
-	stack_t *tmp = NULL;
+	stack_t *node = NULL;
 
 	(void) count;
 	if (*stack)
 	{
-		tmp = *stack;
-		while (tmp)
+		node = *stack;
+		while (node)
 		{
-			fprintf(stdout, "%d\n", tmp->n);
-			tmp = tmp->next;
+			fprintf(stdout, "%d\n", node->n);
+			node = node->next;
 		}
 	}
 }
@@ -80,4 +80,34 @@ void pop(stack_t **stack, unsigned int count)
 	}
 	val= node->n;
 	free(node);
+}
+/**
+ * swap - ...
+ * @stack: ...
+ * @count: ...
+ */
+void swap(stack_t **stack, unsigned int count)
+{
+	stack_t *node = NULL;
+
+	if (!*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%d: can't swap, stack too short\n", count);
+		freestack(*stack);
+		exit(EXIT_FAILURE);
+	}
+	node = (*stack)->next;
+	if (!node->next)
+	{
+		node->prev->prev = node;
+		node->prev->next = NULL;
+	}
+	else
+	{
+		(*stack)->next = node->next;
+		(*stack)->next->prev = *stack;
+	}
+	node->prev = NULL;
+	node->next = *stack;
+	(*stack) = node;
 }
