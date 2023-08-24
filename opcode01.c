@@ -8,6 +8,8 @@ void push(stack_t **stack, unsigned int count)
 {
 	stack_t *node = NULL;
 
+	if (!stack)
+		return;
 	node = malloc(sizeof(stack_t));
 	if (!node)
 		errorMalloc(EXIT_FAILURE, *stack);
