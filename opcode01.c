@@ -10,7 +10,7 @@ void push(stack_t **stack, unsigned int count)
 
 	node = malloc(sizeof(stack_t));
 	if (!node)
-		errorMalloc(EXIT_FAILURE, stack);
+		errorMalloc(EXIT_FAILURE, *stack);
 	(void) count;
 	node->n = val;
 	node->next = *stack;

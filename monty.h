@@ -1,5 +1,6 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
+#define  _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -42,6 +43,8 @@ extern stack_t *head;
 
 /* main.c*/
 void _getfile(char *filename);
+int intVal(unsigned int count, char *opcode, stack_t *stack, char *tok);
+void (*isopcode(char *opc))(stack_t **, unsigned int);
 
 /* free.c*/
 void frees_t(stack_t *stack);
@@ -50,7 +53,7 @@ void frees_t(stack_t *stack);
 void errorNoFile(int r);
 void errorNoAccFile(int r, char *filename);
 void errorNotIns(int r, int i, char *opc,
-char * a, char * b, stack_t *s);
+char *a, char *b, stack_t *s);
 void errorNoInt(int r, int i, stack_t *s);
 void errorMalloc(int r, stack_t *s);
 

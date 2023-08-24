@@ -1,4 +1,6 @@
 #include "monty.h"
+int val;
+FILE *fd;
 /**
  * main - entry function.
  * @argc: number of params.
@@ -28,7 +30,7 @@ void _getfile(char *filename)
 	if (!fd)
 		errorNoAccFile(EXIT_FAILURE, filename);
 	while (getline(&buff, &len, fd) != -1)
-	{	
+	{
 		count++;
 		if (tmp)
 			free(tmp);
@@ -39,7 +41,8 @@ void _getfile(char *filename)
 		if (!tok || tok[0] == '#')
 			continue;
 		strcpy(opcode, tok);
-		if (!(func = isopcode(opcode)))
+		func = isopcode(opcode);
+		if (!func)
 			errorNotIns(EXIT_FAILURE, count, opcode, tmp, buff, stack);
 		intVal(count, opcode, stack, tok);
 		func(&stack, count);
@@ -83,6 +86,7 @@ int intVal(unsigned int count, char *opcode, stack_t *stack, char *tok)
  * isopcode - is a opcode.
  * @opc: The opcode.
  * the f function in list instruction_s.
+ * Return: ...
  */
 void (*isopcode(char *opc))(stack_t **, unsigned int)
 {

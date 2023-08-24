@@ -32,7 +32,7 @@ void errorNoAccFile(int r, char *filename)
  * @s: ...
 */
 void errorNotIns(int r, int i, char *opc,
-char * a, char * b, stack_t *s)
+char *a, char *b, stack_t *s)
 {
 	free(a);
 	free(b);
