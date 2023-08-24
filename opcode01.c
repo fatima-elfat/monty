@@ -91,11 +91,7 @@ void swap(stack_t **stack, unsigned int count)
 	stack_t *node = NULL;
 
 	if (!*stack || !(*stack)->next)
-	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", count);
-		freestack(*stack);
-		exit(EXIT_FAILURE);
-	}
+		errorSwap(EXIT_FAILURE, count);
 	node = (*stack)->next;
 	if (!node->next)
 	{

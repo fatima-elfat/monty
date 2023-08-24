@@ -60,11 +60,12 @@ void errorMalloc(int r, stack_t *s);
 /* error02.c*/
 void errorPint(int r, int i);
 void errorPop(int r, int i);
+void errorSwap(int r, int i);
 
 /* opcode01.c*/
 void push(stack_t **stack, unsigned int count);
 void pall(stack_t **stack, unsigned int count);
 void pint(stack_t **stack, unsigned int count);
 void pop(stack_t **stack, unsigned int count);
-
+void swap(stack_t **stack, unsigned int count);
 #endif
