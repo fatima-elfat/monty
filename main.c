@@ -92,7 +92,7 @@ int intVal(unsigned int count, char *opcode, stack_t *stack, char *tok)
  */
 void (*isopcode(char *opc))(stack_t **, unsigned int)
 {
-	unsigned int i = 0, l;
+	unsigned int i = 0;
 	instruction_t l_opc[] = {
 		{"push", push},
 		{"pall", pall},
