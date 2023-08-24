@@ -6,7 +6,7 @@
   */
 void push(stack_t **stack, unsigned int count)
 {
-	stack_t *node = NULL;
+	stack_t *node = NULL, *bot = NULL;
 
 	if (!stack)
 		return;
@@ -14,15 +14,25 @@ void push(stack_t **stack, unsigned int count)
 	if (!node)
 		errorMalloc(EXIT_FAILURE, *stack);
 	(void) count;
-	node->n = val;
-	node->next = *stack;
-	node->prev = NULL;
-	if (*stack)
+	if(!mode_stack)
 	{
-		/*node->prev = (*stack)->prev;*/
-		(*stack)->prev = node;
+		bot = *stack;
+		while (bot->next)
+			bot = bot->next;
+		node->next = NULL;
+		node->prev = bot;
+		node->n = val;
+		bot->next = node;
 	}
-	*stack = node;
+	else
+	{
+		node->n = val;
+		node->next = *stack;
+		node->prev = NULL;
+		if (*stack)
+			(*stack)->prev = node;
+		*stack = node;
+	}
 }
 /**
  * pall - ...

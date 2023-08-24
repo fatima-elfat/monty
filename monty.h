@@ -9,6 +9,7 @@
 #include <fcntl.h>
 extern FILE *fd;
 extern int val;
+extern int mode_stack;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue).
  * @n: integer.
@@ -95,4 +96,7 @@ void pstr(stack_t **stack, unsigned int count);
 void rotl(stack_t **stack, unsigned int count);
 void rotr(stack_t **stack, unsigned int count);
 
+/* opcode04.c*/
+void stack(stack_t **stack, unsigned int count);
+void queue(stack_t **stack, unsigned int count);
 #endif

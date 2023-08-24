@@ -11,6 +11,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 		errorNoFile(EXIT_FAILURE);
+	mode_stack = 1;
 	_getfile(argv[1]);
 	return (EXIT_SUCCESS);
 }
@@ -109,6 +110,8 @@ void (*isopcode(char *opc))(stack_t **, unsigned int)
 		{"pstr", pstr},
 		{"rotl", rotl},
 		{"rotr", rotr},
+		{"stack", stack},
+		{"queue", queue}
 		{NULL, NULL}
 	};
 	while (l_opc[i].f != NULL)
