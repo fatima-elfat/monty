@@ -49,13 +49,16 @@ void (*isopcode(char *opc))(stack_t **, unsigned int);
 /* free.c*/
 void frees_t(stack_t *stack);
 
-/* error.c*/
+/* error01.c*/
 void errorNoFile(int r);
 void errorNoAccFile(int r, char *filename);
 void errorNotIns(int r, int i, char *opc,
 char *a, char *b, stack_t *s);
 void errorNoInt(int r, int i, stack_t *s);
 void errorMalloc(int r, stack_t *s);
+
+/* error02.c*/
+void errorPint(int r, int i);
 
 /* opcode01.c*/
 void push(stack_t **stack, unsigned int count);
