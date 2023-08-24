@@ -62,6 +62,9 @@ void errorPint(int r, int i);
 void errorPop(int r, int i);
 void errorSwap(int r, int i);
 void errorAdd(int r, int i);
+void errorSub(int r, int i);
+
+/* error03.c*/
 
 /* opcode01.c*/
 void push(stack_t **stack, unsigned int count);
@@ -71,6 +74,8 @@ void pop(stack_t **stack, unsigned int count);
 void swap(stack_t **stack, unsigned int count);
 
 /* opcode02.c*/
- void add(stack_t **stack, unsigned int count);
+void add(stack_t **stack, unsigned int count);
+void nop(stack_t **stack, unsigned int count);
+void sub(stack_t **stack, unsigned int count);
 
 #endif

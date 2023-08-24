@@ -14,3 +14,30 @@
 	node->next->n = node->n + node->next->n;
 	pop(stack, count);
 }
+/**
+ * nop - ...
+ * @stack: ...
+ * @count: ...
+ */
+void nop(stack_t **stack, unsigned int count)
+{
+	(void) count;
+	if (!*stack)
+		return;
+}
+
+/**
+ * sub - ...
+ * @stack: ...
+ * @count: ...
+ */
+void sub(stack_t **stack, unsigned int count)
+{
+	stack_t *node = NULL;
+
+	if (!*stack || !(*stack)->next)
+		errorSub(EXIT_FAILURE, count);
+	node = *stack;
+	node->next->n =  node->next->n - node->n;
+	pop(stack, count);
+}
