@@ -78,7 +78,7 @@ void pop(stack_t **stack, unsigned int count)
 		(*stack)->prev = NULL;
 		*stack = (*stack)->next;
 	}
-	val= node->n;
+	val = node->n;
 	free(node);
 }
 /**
