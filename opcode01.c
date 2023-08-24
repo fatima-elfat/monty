@@ -44,3 +44,17 @@ void pall(stack_t **stack, unsigned int count)
 		}
 	}
 }
+#include "monty.h"
+
+/**
+ * pint - ...
+ * @stack: ...
+ * @count: ...
+ */
+void pint(stack_t **stack, unsigned int count)
+{
+	(void) count;
+	if (*stack == NULL)
+		errorPint(EXIT_FAILURE, count);
+	printf("%d\n", (*stack)->n);
+}
