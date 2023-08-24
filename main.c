@@ -27,7 +27,7 @@ void _getfile(char *filename)
 	void (*func)(stack_t **, unsigned int);
 
 	fd = fopen(filename, "r");
-	if (!fd)
+	if (!fd || fd == -1)
 		errorNoAccFile(EXIT_FAILURE, filename);
 	while (getline(&buff, &len, fd) != -1)
 	{
