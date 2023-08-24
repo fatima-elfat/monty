@@ -14,7 +14,7 @@ void push(stack_t **stack, unsigned int count)
 	if (!node)
 		errorMalloc(EXIT_FAILURE, *stack);
 	(void) count;
-	if(!mode_stack)
+	if (!mode_stack)
 	{
 		bot = *stack;
 		while (bot->next)
