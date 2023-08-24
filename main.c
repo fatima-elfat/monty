@@ -105,6 +105,7 @@ void (*isopcode(char *opc))(stack_t **, unsigned int)
 		{"div", div},
 		{"mul", mul},
 		{"mod", mod},
+		{"pchar", pchar},
 		{NULL, NULL}
 	};
 	while (l_opc[i].f != NULL)

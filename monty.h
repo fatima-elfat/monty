@@ -70,6 +70,10 @@ void errorDivZero(int r, int i);
 void errorMul(int r, int i);
 void errorMod(int r, int i);
 
+/* error04.c*/
+void errorPchar(int r, int i);
+void errorPcharr(int r, int i);
+
 /* opcode01.c*/
 void push(stack_t **stack, unsigned int count);
 void pall(stack_t **stack, unsigned int count);
@@ -86,5 +90,6 @@ void mul(stack_t **stack, unsigned int count);
 
 /* opcode03.c*/
 void mod(stack_t **stack, unsigned int count);
+void pchar(stack_t **stack, unsigned int count);
 
 #endif
