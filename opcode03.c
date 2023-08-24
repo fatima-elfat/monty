@@ -73,3 +73,24 @@ void rotl(stack_t **stack, unsigned int count)
 	*stack = (*stack)->next;
 	node->next->next = NULL;
 }
+/**
+ * rotr - ...
+ * @stack: ...
+ * @count: ...
+ */
+void rotr(stack_t **stack, unsigned int count)
+{
+	stack_t *node = NULL;
+
+	(void) count;
+	if (!*stack || !(*stack)->next)
+		return;
+	node = *stack;
+	while (node->next)
+		node = node->next;
+	(*stack)->prev = node;
+	node->next = *stack;
+	node->prev->next = NULL;
+	node->prev = NULL;
+	*stack = (*stack)->prev;
+}

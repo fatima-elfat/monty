@@ -108,6 +108,7 @@ void (*isopcode(char *opc))(stack_t **, unsigned int)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 	while (l_opc[i].f != NULL)
