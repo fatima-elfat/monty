@@ -91,5 +91,7 @@ void mul(stack_t **stack, unsigned int count);
 /* opcode03.c*/
 void mod(stack_t **stack, unsigned int count);
 void pchar(stack_t **stack, unsigned int count);
+void pstr(stack_t **stack, unsigned int count);
+void rotl(stack_t **stack, unsigned int count);
 
 #endif

@@ -52,3 +52,24 @@ void pstr(stack_t **stack, unsigned int count)
 	}
 	fprintf(stdout, "\n");
 }
+/**
+ * rotl - ...
+ * @stack: ...
+ * @count: ...
+ */
+void rotl(stack_t **stack, unsigned int count)
+{
+	stack_t *node = NULL;
+
+	(void) count;
+	if (!*stack || !(*stack)->next)
+		return;
+	node = *stack;
+	while (node->next)
+		node = node->next;
+	(*stack)->prev = node;
+	node->next = *stack;
+	(*stack)->next->prev = NULL;
+	*stack = (*stack)->next;
+	node->next->next = NULL;
+}
