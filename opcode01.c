@@ -53,8 +53,7 @@ void pall(stack_t **stack, unsigned int count)
  */
 void pint(stack_t **stack, unsigned int count)
 {
-	(void) count;
-	if (*stack == NULL)
+	if (!*stack || !stack)
 		errorPint(EXIT_FAILURE, count);
-	printf("%d\n", (*stack)->n);
+	fprintf(stdout, "%d\n", (*stack)->n);
 }
