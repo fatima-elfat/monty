@@ -42,11 +42,11 @@ void sub(stack_t **stack, unsigned int count)
 	pop(stack, count);
 }
 /**
- * div - ...
+ * divv - ...
  * @stack: ...
  * @count: ...
  */
-void div(stack_t **stack, unsigned int count)
+void divv(stack_t **stack, unsigned int count)
 {
 	stack_t *node = NULL;
 
