@@ -23,3 +23,14 @@ void errorDivZero(int r, int i)
 	fclose(fd);
 	exit(r);
 }
+/**
+ * errorMul - handles err when can't mul.
+ * @r: exit value.
+ * @i: ...
+*/
+void errorMul(int r, int i)
+{
+	fprintf(stderr, "L%d: can't mul, stack too short\n", i);
+	fclose(fd);
+	exit(r);
+}

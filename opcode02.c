@@ -58,3 +58,18 @@ void div(stack_t **stack, unsigned int count)
 	node->next->n = node->next->n / node->n;
 	pop(stack, count);
 }
+/**
+ * mul - ...
+ * @stack: ...
+ * @count: ...
+ */
+void mul(stack_t **stack, unsigned int count)
+{
+	stack_t *node = NULL;
+
+	if (!*stack || !(*stack)->next)
+		errorMul(EXIT_FAILURE, count);
+	node = *stack;
+	pop(stack, count);
+	node->next->n = node->next->n * node->n;
+}
