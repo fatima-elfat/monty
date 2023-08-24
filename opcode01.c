@@ -24,7 +24,7 @@ void push(stack_t **stack, unsigned int count)
 		node->n = val;
 		bot->next = node;
 	}
-	else if (!*stack || mode_stack)
+	else
 	{
 		node->n = val;
 		node->next = *stack;
