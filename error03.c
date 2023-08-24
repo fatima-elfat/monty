@@ -34,3 +34,14 @@ void errorMul(int r, int i)
 	fclose(fd);
 	exit(r);
 }
+/**
+ * errorMod - handles err when can't mod.
+ * @r: exit value.
+ * @i: ...
+*/
+void errorMod(int r, int i)
+{
+	fprintf(stderr, "L%d: can't mod, stack too short\n", i);
+	fclose(fd);
+	exit(r);
+}

@@ -68,6 +68,7 @@ void errorSub(int r, int i);
 void errorDiv(int r, int i);
 void errorDivZero(int r, int i);
 void errorMul(int r, int i);
+void errorMod(int r, int i);
 
 /* opcode01.c*/
 void push(stack_t **stack, unsigned int count);
@@ -82,5 +83,8 @@ void nop(stack_t **stack, unsigned int count);
 void sub(stack_t **stack, unsigned int count);
 void div(stack_t **stack, unsigned int count);
 void mul(stack_t **stack, unsigned int count);
+
+/* opcode03.c*/
+void mod(stack_t **stack, unsigned int count);
 
 #endif
